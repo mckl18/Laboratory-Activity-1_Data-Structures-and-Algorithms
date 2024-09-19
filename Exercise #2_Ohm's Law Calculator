@@ -1,0 +1,47 @@
+# Ask the user what they want to calculate
+print("What would you like to calculate?")
+print("1. Voltage (V)")
+print("2. Current (I)")
+print("3. Resistance (R)")
+
+choice = input("Enter 1, 2, or 3: ")
+
+# Perform the appropriate calculation based on the user's choice
+if choice == '1':
+    # Calculate Voltage (V = I * R)
+    try:
+        current = float(input("Enter the current (I) in amperes: "))
+        resistance = float(input("Enter the resistance (R) in ohms: "))
+        voltage = current * resistance
+        print(f"The voltage (V) is {voltage:.2f} volts.")
+    except ValueError:
+        print("Please enter valid numbers.")
+
+elif choice == '2':
+    # Calculate Current (I = V / R)
+    try:
+        voltage = float(input("Enter the voltage (V) in volts: "))
+        resistance = float(input("Enter the resistance (R) in ohms: "))
+        if resistance == 0:
+            print("Resistance cannot be zero (division by zero).")
+        else:
+            current = voltage / resistance
+            print(f"The current (I) is {current:.2f} amperes.")
+    except ValueError:
+        print("Please enter valid numbers.")
+
+elif choice == '3':
+    # Calculate Resistance (R = V / I)
+    try:
+        voltage = float(input("Enter the voltage (V) in volts: "))
+        current = float(input("Enter the current (I) in amperes: "))
+        if current == 0:
+            print("Current cannot be zero (division by zero).")
+        else:
+            resistance = voltage / current
+            print(f"The resistance (R) is {resistance:.2f} ohms.")
+    except ValueError:
+        print("Please enter valid numbers.")
+
+else:
+    print("Invalid option. Please choose 1, 2, or 3.")

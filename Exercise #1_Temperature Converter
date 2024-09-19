@@ -1,0 +1,19 @@
+# Ask the user for the temperature
+temperature = float(input("Enter the temperature: "))
+
+# Ask the user for the conversion type
+print("Choose the conversion type:")
+print("1. Celsius to Fahrenheit")
+print("2. Fahrenheit to Celsius")
+
+choice = input("Enter 1 or 2: ")
+
+# Perform the conversion based on user input
+if choice == '1':
+    result = (temperature * 9/5) + 32
+    print(f"{temperature}°C is {result:.2f}°F.")
+elif choice == '2':
+    result = (temperature - 32) * 5/9
+    print(f"{temperature}°F is {result:.2f}°C.")
+else:
+    print("Invalid option. Please choose 1 or 2.")

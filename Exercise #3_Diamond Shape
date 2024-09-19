@@ -1,0 +1,18 @@
+# Ask the user to input an odd integer
+n = int(input("Enter an odd integer: "))
+
+# Check if the number is odd
+if n % 2 == 0:
+    print("Please provide an odd integer.")
+else:
+    # Upper part of the diamond
+    for i in range(n // 2 + 1):
+        spaces = ' ' * (n // 2 - i)
+        stars = '*' * (2 * i + 1)
+        print(spaces + stars)
+
+    # Lower part of the diamond
+    for i in range(n // 2 - 1, -1, -1):
+        spaces = ' ' * (n // 2 - i)
+        stars = '*' * (2 * i + 1)
+        print(spaces + stars)

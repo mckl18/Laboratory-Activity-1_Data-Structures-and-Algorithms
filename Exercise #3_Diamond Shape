@@ -1,22 +1,22 @@
-def print_diamond(n):
-    if n % 2 == 0:
-        return "Please provide an odd integer."
-    
-    diamond = ""
-    
-    # Upper part of the diamond
-    for i in range(n//2 + 1):
-        spaces = ' ' * ((n // 2) - i)
-        stars = '*' * (2 * i + 1)
-        diamond += spaces + stars + '\n'
-    
-    # Lower part of the diamond
-    for i in range(n//2 - 1, -1, -1):
-        spaces = ' ' * ((n // 2) - i)
-        stars = '*' * (2 * i + 1)
-        diamond += spaces + stars + '\n'
-    
-    return diamond.strip()
+def print_diamond():
+    # Ask the user to input an odd integer
+    n = int(input("Enter an odd integer: "))
 
-# Testing the function with n = 5
-print(print_diamond(5))
+    # Check if the number is odd
+    if n % 2 == 0:
+        print("Please provide an odd integer.")
+    else:
+        # Upper part of the diamond
+        for i in range(n // 2 + 1):
+            spaces = ' ' * (n // 2 - i)
+            stars = '*' * (2 * i + 1)
+            print(spaces + stars)
+
+        # Lower part of the diamond
+        for i in range(n // 2 - 1, -1, -1):
+            spaces = ' ' * (n // 2 - i)
+            stars = '*' * (2 * i + 1)
+            print(spaces + stars)
+
+# Testing the function
+print_diamond()
